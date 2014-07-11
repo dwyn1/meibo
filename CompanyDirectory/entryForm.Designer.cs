@@ -245,6 +245,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 19);
             this.txtName.TabIndex = 55;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtKana
             // 
@@ -361,6 +362,7 @@
             this.buttoncancel.TabIndex = 72;
             this.buttoncancel.Text = "キャンセル";
             this.buttoncancel.UseVisualStyleBackColor = true;
+            this.buttoncancel.Click += new System.EventHandler(this.buttoncancel_Click);
             // 
             // buttonChange
             // 
@@ -371,6 +373,7 @@
             this.buttonChange.TabIndex = 73;
             this.buttonChange.Text = "登録";
             this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
             // Redlabel
             // 

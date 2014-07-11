@@ -59,6 +59,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 19);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // buttonChange
             // 
@@ -69,6 +70,7 @@
             this.buttonChange.TabIndex = 75;
             this.buttonChange.Text = "登録";
             this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
             // buttoncancel
             // 
@@ -79,6 +81,7 @@
             this.buttoncancel.TabIndex = 74;
             this.buttoncancel.Text = "キャンセル";
             this.buttoncancel.UseVisualStyleBackColor = true;
+            this.buttoncancel.Click += new System.EventHandler(this.buttoncancel_Click);
             // 
             // entrymasterForm
             // 

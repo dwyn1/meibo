@@ -18,8 +18,8 @@ namespace CompanyDirectory
         }
 
         private void buttonPass_Click(object sender, EventArgs e)
-        {
-            changePwForm cpf = new changePwForm();
+        {  //IDからDBにパスが一致するかどうかの処理を任せる。
+            changePwForm cpf = new changePwForm(4);//管理者のID/PASSはともに４とした。
             cpf.Show();
         }
 
@@ -27,6 +27,12 @@ namespace CompanyDirectory
         {
             masterForm mf = new masterForm();
             mf.Show();
+        }
+
+        private void buttonRiseki_Click(object sender, EventArgs e)
+        {
+            deletelistForm dlf = new deletelistForm();
+            dlf.Show();
         }
     }
 }

@@ -457,6 +457,7 @@
             this.Controls.Add(this.label1);
             this.Name = "personalForm";
             this.Text = "個人情報";
+            this.Load += new System.EventHandler(this.personalForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

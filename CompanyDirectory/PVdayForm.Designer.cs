@@ -61,6 +61,7 @@
             this.buttonbefore.TabIndex = 2;
             this.buttonbefore.Text = "前へ";
             this.buttonbefore.UseVisualStyleBackColor = true;
+            this.buttonbefore.Click += new System.EventHandler(this.buttonbefore_Click);
             // 
             // buttonnext
             // 
@@ -70,6 +71,7 @@
             this.buttonnext.TabIndex = 3;
             this.buttonnext.Text = "次へ";
             this.buttonnext.UseVisualStyleBackColor = true;
+            this.buttonnext.Click += new System.EventHandler(this.buttonnext_Click);
             // 
             // buttonOK
             // 
@@ -93,6 +95,7 @@
             this.Controls.Add(this.label1);
             this.Name = "PVdayForm";
             this.Text = "有給使用日";
+            this.Load += new System.EventHandler(this.PVdayForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

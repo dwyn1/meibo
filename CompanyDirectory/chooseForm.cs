@@ -32,14 +32,22 @@ namespace CompanyDirectory
 
         private void bottonMeibo_Click(object sender, EventArgs e)
         {
+            // 畑中追加、すぐに消す
+            listForm lf = new listForm();
             if (SendData == 1)
             {
                 plf.Show();
             }
-            else if (SendData == 2)
+            else if (SendData <= 300 && SendData >= 101)
             {
                 lf.Show();
             }
+            else if (SendData == 3)
+            {
+                managelistForm mlf = new managelistForm();
+                mlf.Show();
+            }
+
         }
         public int SendData
         {

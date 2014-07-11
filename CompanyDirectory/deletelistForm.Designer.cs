@@ -54,6 +54,7 @@
             this.buttonReentry.TabIndex = 0;
             this.buttonReentry.Text = "在籍の変更";
             this.buttonReentry.UseVisualStyleBackColor = true;
+            this.buttonReentry.Click += new System.EventHandler(this.buttonReentry_Click);
             // 
             // buttonDelete
             // 
@@ -63,6 +64,7 @@
             this.buttonDelete.TabIndex = 1;
             this.buttonDelete.Text = "完全に消去";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonnext
             // 

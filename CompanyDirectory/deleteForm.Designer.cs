@@ -349,6 +349,7 @@
             this.Controls.Add(this.label1);
             this.Name = "deleteForm";
             this.Text = "消去確認";
+            this.Load += new System.EventHandler(this.deleteForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

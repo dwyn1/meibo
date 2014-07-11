@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CompanyDirectory
 {
@@ -54,10 +55,15 @@ namespace CompanyDirectory
                     label1.ForeColor = System.Drawing.Color.Red;
                     label1.Text = "入力形式にミスがあります";
 
-                    if (db1.show(i, s2) == 0)
+                    if (db1.show(i, s2) == 0 && i!= 4)
                     {
                         cf.Show();     //後で消そう
                         checkid.show(i);
+                    }
+                    else if (db1.show(i, s2) == 0 && i == 4) //管理者IDを一時的に4とした。畑中さんと話し合う。
+                    {
+                        managelistForm mlf = new managelistForm();
+                        mlf.Show();
                     }
                     else
                     {
@@ -66,10 +72,15 @@ namespace CompanyDirectory
                     }
                     j++;
                 }
-                else
+                else if(db1.show(i, s2) == 0 && i!= 4)
                 {
                     cf.Show();                           //後で消そう
                     checkid.show(i);
+                }
+                else if (db1.show(i, s2) == 0 && i == 4)
+                {
+                    managelistForm mlf = new managelistForm();
+                    mlf.Show();
                 }
             }
             else
@@ -100,7 +111,7 @@ namespace CompanyDirectory
             new System.Text.RegularExpressions.Regex(@"[\u0030-\u0039,\u0041-\u005A,\u0061-\u007A]");
             try
             {
-                if (r.IsMatch(text2) == true && text2.Length == 1)
+                if (r.IsMatch(text2) == true && text2.Length == 8)
                 {
                     x = 0;
                 }
@@ -120,19 +131,32 @@ namespace CompanyDirectory
     class LoginID
     {
         /****************************************************
-* IDとPwが正しいかor正しくないか判定するメソッド
-* 引数：string id, string pw
-* 戻り値：正しい場合＞0, 正しくない場合＞1
-* 引数のstring pwをそのまま持っていって下さい
-* ************************************************* */
+        * IDとPwが正しいかor正しくないか判定するメソッド
+        * 引数：string id, string pw
+        * 戻り値：正しい場合＞0, 正しくない場合＞1
+        * 引数のstring pwをそのまま持っていって下さい
+        * ************************************************* */
         public int show(int id, string pw)
         {
+            // データベース接続オブジェクトを作る
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.ConnectionString = @"Data Source=MER1103052\SQLEXPRESS;Initial Catalog=master;User Id=sa;Password=dowellsql;";
+
+            SqlCommand cmd = new SqlCommand();
+
+            conn.Open();
             // SQL文を準備する
-            string sql;
-            sql = "SELECT COUNT(*) FROM tbl_meibo WHERE id =(SELECT id FROM tbl_meibo WHERE pw = (select pw from tbl_meibo Where flag_no = 1 and id =" + id + "and pw =" + pw + "))";
+            // flag_no = 0：在籍, flag_no = 1：離籍
+            //cmd.CommandText = "SELECT COUNT(*) FROM tbl_meibo WHERE id =(SELECT id FROM tbl_meibo WHERE pw = (select pw from tbl_meibo Where flag_no = 0 and id =" + id + "and pw =" + pw + "))";
+            cmd.CommandText = "SELECT COUNT(*) FROM tbl_meibo WHERE  flag_no = 0 and id =" + id + " and pw =" + pw;
+
+
+            cmd.Connection = conn;
+            int i = (int)cmd.ExecuteScalar();
+            conn.Close();
 
             // ID・Pwが正しい場合
-            /*if (sql == "1")
+            if (i == 1)
             {
                 return 0;
             }
@@ -141,9 +165,9 @@ namespace CompanyDirectory
             else
             {
                 return 1;
-            }*/
-            return 0;
+            }
         }
+        public string connectionString { get; set; }
     }
     class ID                      //IDが半角数字以外３文字以外ならエラーを返す。
     {
@@ -178,7 +202,7 @@ namespace CompanyDirectory
         {
             if (i == 0)
             {
-                //～.Show();管理画面を開く
+                //～.Show();管理画面を開く   　　　あとで消去の可能性あり。
             }
             else if (i == 1)
             {

@@ -61,6 +61,7 @@
             this.buttonOK.TabIndex = 65;
             this.buttonOK.Text = "はい";
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttoncancel
             // 
@@ -71,6 +72,7 @@
             this.buttoncancel.TabIndex = 64;
             this.buttoncancel.Text = "いいえ";
             this.buttoncancel.UseVisualStyleBackColor = true;
+            this.buttoncancel.Click += new System.EventHandler(this.buttoncancel_Click);
             // 
             // checkForm
             // 
