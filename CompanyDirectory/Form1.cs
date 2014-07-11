@@ -97,7 +97,7 @@ namespace CompanyDirectory
             }
             DataSet ds = new DataSet();
             takePVForm tpv = new takePVForm(i);
-            //personalForm pf = new personalForm(i);
+            //personalForm pf = new personalForm(i) ;
             cf.SendData = i;
         }
     }
