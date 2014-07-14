@@ -138,14 +138,14 @@ namespace CompanyDirectory
         {
             dgvIppan.DataSource = ds;
             dgvIppan.DataMember = ds.Tables[0].TableName;
-            int[] ippan_list_width = new int[] { 30, 78, 81, 81, 81, 45, 79, 200 }; //size720, 235
+            int[] ippan_list_width = new int[] { 30, 78, 81, 81, 81, 45, 79, 150, 80 }; //size750, 235
             for (int i = 0; ippan_list_width.Length > i; i++)
             {
                 dgvIppan.Columns[i].Width = ippan_list_width[i];
             }
 
             //          表示データヘッダー部分の編集（不要かもしれません）
-            string[] ippanlist = new string[] { "ID", "氏名", "かな氏名", "部署名", "役職名", "性別", "入社年月日", "メール" };
+            string[] ippanlist = new string[] { "ID", "氏名", "かな氏名", "部署名", "役職名", "性別", "入社年月日", "メール","緊急連絡先" };
             for (int i = 0; ippanlist.Length > i; i++)
             {
                 dgvIppan.Columns[i].HeaderText = ippanlist[i];
