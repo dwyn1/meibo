@@ -312,7 +312,7 @@ namespace CompanyDirectory
 
         /************************************************
          * ＜SQL文発行＞
-         * 検索データを受け取り、DB内のデータと照合して
+         * 検索データを受け取り、DB内のデータと照合して 
          * データを表示させる
          * ********************************************* */
         private DataSet getdata(int? i0, string s0, string s1, string s2, string s3, string s4, DateTime? dt, string s6,string s7,out int count)  //検索ボタンクリック時のDB用メソッド
