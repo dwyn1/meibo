@@ -47,7 +47,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(65, 13);
+            this.txtName.Location = new System.Drawing.Point(86, 14);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(70, 19);
             this.txtName.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // txtKana
             // 
-            this.txtKana.Location = new System.Drawing.Point(141, 13);
+            this.txtKana.Location = new System.Drawing.Point(162, 14);
             this.txtKana.Name = "txtKana";
             this.txtKana.Size = new System.Drawing.Size(72, 19);
             this.txtKana.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(561, 13);
+            this.txtMail.Location = new System.Drawing.Point(582, 14);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(100, 19);
             this.txtMail.TabIndex = 8;
@@ -72,7 +72,7 @@
             // cmbBusho
             // 
             this.cmbBusho.FormattingEnabled = true;
-            this.cmbBusho.Location = new System.Drawing.Point(220, 13);
+            this.cmbBusho.Location = new System.Drawing.Point(241, 14);
             this.cmbBusho.Name = "cmbBusho";
             this.cmbBusho.Size = new System.Drawing.Size(75, 20);
             this.cmbBusho.TabIndex = 3;
@@ -82,7 +82,7 @@
             // cmbSex
             // 
             this.cmbSex.FormattingEnabled = true;
-            this.cmbSex.Location = new System.Drawing.Point(382, 13);
+            this.cmbSex.Location = new System.Drawing.Point(403, 14);
             this.cmbSex.Name = "cmbSex";
             this.cmbSex.Size = new System.Drawing.Size(37, 20);
             this.cmbSex.TabIndex = 5;
@@ -93,7 +93,7 @@
             // cmbYaku
             // 
             this.cmbYaku.FormattingEnabled = true;
-            this.cmbYaku.Location = new System.Drawing.Point(301, 13);
+            this.cmbYaku.Location = new System.Drawing.Point(322, 14);
             this.cmbYaku.Name = "cmbYaku";
             this.cmbYaku.Size = new System.Drawing.Size(75, 20);
             this.cmbYaku.TabIndex = 4;
@@ -103,7 +103,7 @@
             // cmbEnter
             // 
             this.cmbEnter.FormattingEnabled = true;
-            this.cmbEnter.Location = new System.Drawing.Point(498, 13);
+            this.cmbEnter.Location = new System.Drawing.Point(519, 14);
             this.cmbEnter.Name = "cmbEnter";
             this.cmbEnter.Size = new System.Drawing.Size(57, 20);
             this.cmbEnter.TabIndex = 7;
@@ -112,7 +112,7 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(13, 13);
+            this.txtid.Location = new System.Drawing.Point(34, 14);
             this.txtid.Mask = "999999";
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(46, 19);
@@ -121,7 +121,7 @@
             // 
             // txtEnterday
             // 
-            this.txtEnterday.Location = new System.Drawing.Point(425, 14);
+            this.txtEnterday.Location = new System.Drawing.Point(446, 15);
             this.txtEnterday.Mask = "0000年90月90日";
             this.txtEnterday.Name = "txtEnterday";
             this.txtEnterday.Size = new System.Drawing.Size(73, 19);
@@ -131,7 +131,7 @@
             // 
             // buttonsearch
             // 
-            this.buttonsearch.Location = new System.Drawing.Point(667, 9);
+            this.buttonsearch.Location = new System.Drawing.Point(688, 10);
             this.buttonsearch.Name = "buttonsearch";
             this.buttonsearch.Size = new System.Drawing.Size(75, 23);
             this.buttonsearch.TabIndex = 9;
@@ -148,12 +148,12 @@
             this.dgvIppan.Name = "dgvIppan";
             this.dgvIppan.ReadOnly = true;
             this.dgvIppan.RowTemplate.Height = 21;
-            this.dgvIppan.Size = new System.Drawing.Size(737, 179);
+            this.dgvIppan.Size = new System.Drawing.Size(750, 235);
             this.dgvIppan.TabIndex = 10;
             // 
             // buttonbefore
             // 
-            this.buttonbefore.Location = new System.Drawing.Point(291, 224);
+            this.buttonbefore.Location = new System.Drawing.Point(296, 284);
             this.buttonbefore.Name = "buttonbefore";
             this.buttonbefore.Size = new System.Drawing.Size(75, 23);
             this.buttonbefore.TabIndex = 11;
@@ -163,7 +163,7 @@
             // 
             // buttonnext
             // 
-            this.buttonnext.Location = new System.Drawing.Point(394, 224);
+            this.buttonnext.Location = new System.Drawing.Point(399, 284);
             this.buttonnext.Name = "buttonnext";
             this.buttonnext.Size = new System.Drawing.Size(75, 23);
             this.buttonnext.TabIndex = 12;
@@ -185,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 265);
+            this.ClientSize = new System.Drawing.Size(777, 319);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonnext);
             this.Controls.Add(this.buttonbefore);
