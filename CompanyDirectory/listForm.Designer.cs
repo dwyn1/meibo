@@ -66,7 +66,7 @@
             this.txtMail.Location = new System.Drawing.Point(561, 13);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(100, 19);
-            this.txtMail.TabIndex = 7;
+            this.txtMail.TabIndex = 8;
             this.txtMail.TextChanged += new System.EventHandler(this.txtMail_TextChanged);
             // 
             // cmbBusho
@@ -75,7 +75,7 @@
             this.cmbBusho.Location = new System.Drawing.Point(220, 13);
             this.cmbBusho.Name = "cmbBusho";
             this.cmbBusho.Size = new System.Drawing.Size(75, 20);
-            this.cmbBusho.TabIndex = 8;
+            this.cmbBusho.TabIndex = 3;
             this.cmbBusho.SelectedIndexChanged += new System.EventHandler(this.cmbBusho_SelectedIndexChanged);
             this.cmbBusho.TextUpdate += new System.EventHandler(this.cmbBusho_TextUpdate);
             // 
@@ -85,7 +85,7 @@
             this.cmbSex.Location = new System.Drawing.Point(382, 13);
             this.cmbSex.Name = "cmbSex";
             this.cmbSex.Size = new System.Drawing.Size(37, 20);
-            this.cmbSex.TabIndex = 9;
+            this.cmbSex.TabIndex = 5;
             this.cmbSex.SelectedIndexChanged += new System.EventHandler(this.cmbSex_SelectedIndexChanged);
             this.cmbSex.TextUpdate += new System.EventHandler(this.cmbSex_TextUpdate);
             this.cmbSex.TextChanged += new System.EventHandler(this.cmbSex_TextChanged);
@@ -96,7 +96,7 @@
             this.cmbYaku.Location = new System.Drawing.Point(301, 13);
             this.cmbYaku.Name = "cmbYaku";
             this.cmbYaku.Size = new System.Drawing.Size(75, 20);
-            this.cmbYaku.TabIndex = 10;
+            this.cmbYaku.TabIndex = 4;
             this.cmbYaku.SelectedIndexChanged += new System.EventHandler(this.cmbYaku_SelectedIndexChanged);
             this.cmbYaku.TextUpdate += new System.EventHandler(this.cmbYaku_TextUpdate);
             // 
@@ -106,7 +106,7 @@
             this.cmbEnter.Location = new System.Drawing.Point(498, 13);
             this.cmbEnter.Name = "cmbEnter";
             this.cmbEnter.Size = new System.Drawing.Size(57, 20);
-            this.cmbEnter.TabIndex = 11;
+            this.cmbEnter.TabIndex = 7;
             this.cmbEnter.SelectedIndexChanged += new System.EventHandler(this.cmbEnter_SelectedIndexChanged);
             this.cmbEnter.TextUpdate += new System.EventHandler(this.cmbEnter_TextUpdate);
             // 
@@ -116,7 +116,7 @@
             this.txtid.Mask = "999999";
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(46, 19);
-            this.txtid.TabIndex = 12;
+            this.txtid.TabIndex = 0;
             this.txtid.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtid_MaskInputRejected);
             // 
             // txtEnterday
@@ -125,7 +125,7 @@
             this.txtEnterday.Mask = "0000年90月90日";
             this.txtEnterday.Name = "txtEnterday";
             this.txtEnterday.Size = new System.Drawing.Size(73, 19);
-            this.txtEnterday.TabIndex = 13;
+            this.txtEnterday.TabIndex = 6;
             this.txtEnterday.ValidatingType = typeof(System.DateTime);
             this.txtEnterday.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtEnterday_MaskInputRejected);
             // 
@@ -134,7 +134,7 @@
             this.buttonsearch.Location = new System.Drawing.Point(667, 9);
             this.buttonsearch.Name = "buttonsearch";
             this.buttonsearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonsearch.TabIndex = 14;
+            this.buttonsearch.TabIndex = 9;
             this.buttonsearch.Text = "検索";
             this.buttonsearch.UseVisualStyleBackColor = true;
             this.buttonsearch.Click += new System.EventHandler(this.buttonsearch_Click);
@@ -149,14 +149,14 @@
             this.dgvIppan.ReadOnly = true;
             this.dgvIppan.RowTemplate.Height = 21;
             this.dgvIppan.Size = new System.Drawing.Size(737, 179);
-            this.dgvIppan.TabIndex = 15;
+            this.dgvIppan.TabIndex = 10;
             // 
             // buttonbefore
             // 
             this.buttonbefore.Location = new System.Drawing.Point(291, 224);
             this.buttonbefore.Name = "buttonbefore";
             this.buttonbefore.Size = new System.Drawing.Size(75, 23);
-            this.buttonbefore.TabIndex = 16;
+            this.buttonbefore.TabIndex = 11;
             this.buttonbefore.Text = "前へ";
             this.buttonbefore.UseVisualStyleBackColor = true;
             this.buttonbefore.Click += new System.EventHandler(this.buttonbefore_Click);
@@ -166,7 +166,7 @@
             this.buttonnext.Location = new System.Drawing.Point(394, 224);
             this.buttonnext.Name = "buttonnext";
             this.buttonnext.Size = new System.Drawing.Size(75, 23);
-            this.buttonnext.TabIndex = 17;
+            this.buttonnext.TabIndex = 12;
             this.buttonnext.Text = "次へ";
             this.buttonnext.UseVisualStyleBackColor = true;
             this.buttonnext.Click += new System.EventHandler(this.buttonnext_Click);
@@ -177,7 +177,7 @@
             this.label1.Location = new System.Drawing.Point(13, 249);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 12);
-            this.label1.TabIndex = 18;
+            this.label1.TabIndex = 13;
             this.label1.Text = "label1";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 

@@ -43,7 +43,7 @@
             this.label1.Location = new System.Drawing.Point(48, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 12);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 3;
             this.label1.Text = "IDとパスワードを入力してください";
             // 
             // Redlabel
@@ -53,7 +53,7 @@
             this.Redlabel.Location = new System.Drawing.Point(65, 30);
             this.Redlabel.Name = "Redlabel";
             this.Redlabel.Size = new System.Drawing.Size(0, 12);
-            this.Redlabel.TabIndex = 1;
+            this.Redlabel.TabIndex = 4;
             // 
             // label3
             // 
@@ -61,7 +61,7 @@
             this.label3.Location = new System.Drawing.Point(34, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(16, 12);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 5;
             this.label3.Text = "ID";
             // 
             // label4
@@ -70,7 +70,7 @@
             this.label4.Location = new System.Drawing.Point(34, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 12);
-            this.label4.TabIndex = 3;
+            this.label4.TabIndex = 6;
             this.label4.Text = "パスワード";
             // 
             // textBox2
@@ -79,7 +79,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(100, 19);
-            this.textBox2.TabIndex = 5;
+            this.textBox2.TabIndex = 1;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // buttonOK
@@ -87,7 +87,7 @@
             this.buttonOK.Location = new System.Drawing.Point(77, 119);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
-            this.buttonOK.TabIndex = 6;
+            this.buttonOK.TabIndex = 2;
             this.buttonOK.Text = "確定";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
@@ -97,7 +97,7 @@
             this.txtid.Location = new System.Drawing.Point(92, 48);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(100, 19);
-            this.txtid.TabIndex = 7;
+            this.txtid.TabIndex = 0;
             this.txtid.TextChanged += new System.EventHandler(this.txtid_TextChanged);
             // 
             // IdPwForm
