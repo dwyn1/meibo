@@ -12,7 +12,7 @@ namespace CompanyDirectory
 {
     public partial class chooseForm : Form
     {
-        listForm lf = new listForm();
+       
         postlistForm plf = new postlistForm();
         CheckID ci = new CheckID();
         IdPwForm idp = new IdPwForm();
@@ -32,13 +32,21 @@ namespace CompanyDirectory
 
         private void bottonMeibo_Click(object sender, EventArgs e)
         {
+            // 畑中追加、すぐに消す
+
             if (SendData == 1)
             {
                 plf.Show();
             }
-            else if (SendData == 2)
+            else if (SendData >= 101 && SendData<= 300)
             {
+                listForm lf = new listForm();
                 lf.Show();
+            }
+            else if (SendData == 3)
+            {
+                managelistForm mlf = new managelistForm();
+                mlf.Show();
             }
         }
         public int SendData

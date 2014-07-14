@@ -51,6 +51,7 @@
             this.buttonRiseki.TabIndex = 1;
             this.buttonRiseki.Text = "離籍者名簿";
             this.buttonRiseki.UseVisualStyleBackColor = true;
+            this.buttonRiseki.Click += new System.EventHandler(this.buttonRiseki_Click);
             // 
             // buttonMast
             // 

@@ -60,6 +60,7 @@
             this.cmbBirth.FormattingEnabled = true;
             resources.ApplyResources(this.cmbBirth, "cmbBirth");
             this.cmbBirth.Name = "cmbBirth";
+            this.cmbBirth.SelectedIndexChanged += new System.EventHandler(this.cmbBirth_SelectedIndexChanged);
             // 
             // txtBirthday
             // 
@@ -82,12 +83,14 @@
             resources.ApplyResources(this.buttonnext, "buttonnext");
             this.buttonnext.Name = "buttonnext";
             this.buttonnext.UseVisualStyleBackColor = true;
+            this.buttonnext.Click += new System.EventHandler(this.buttonnext_Click);
             // 
             // buttonbefore
             // 
             resources.ApplyResources(this.buttonbefore, "buttonbefore");
             this.buttonbefore.Name = "buttonbefore";
             this.buttonbefore.UseVisualStyleBackColor = true;
+            this.buttonbefore.Click += new System.EventHandler(this.buttonbefore_Click);
             // 
             // dgvKanri
             // 
@@ -104,6 +107,7 @@
             resources.ApplyResources(this.buttonsearch, "buttonsearch");
             this.buttonsearch.Name = "buttonsearch";
             this.buttonsearch.UseVisualStyleBackColor = true;
+            this.buttonsearch.Click += new System.EventHandler(this.buttonsearch_Click);
             // 
             // txtEnterday
             // 
@@ -186,6 +190,7 @@
             resources.ApplyResources(this.buttonPV, "buttonPV");
             this.buttonPV.Name = "buttonPV";
             this.buttonPV.UseVisualStyleBackColor = true;
+            this.buttonPV.Click += new System.EventHandler(this.buttonPV_Click);
             // 
             // mainteLink
             // 
@@ -193,6 +198,7 @@
             this.mainteLink.LinkColor = System.Drawing.Color.Black;
             this.mainteLink.Name = "mainteLink";
             this.mainteLink.TabStop = true;
+            this.mainteLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.mainteLink_LinkClicked);
             // 
             // managelistForm
             // 
@@ -222,6 +228,7 @@
             this.Controls.Add(this.txtKana);
             this.Controls.Add(this.txtName);
             this.Name = "managelistForm";
+            this.Load += new System.EventHandler(this.managelistForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKanri)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

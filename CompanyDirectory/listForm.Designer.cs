@@ -41,6 +41,7 @@
             this.dgvIppan = new System.Windows.Forms.DataGridView();
             this.buttonbefore = new System.Windows.Forms.Button();
             this.buttonnext = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIppan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +77,7 @@
             this.cmbBusho.Size = new System.Drawing.Size(75, 20);
             this.cmbBusho.TabIndex = 8;
             this.cmbBusho.SelectedIndexChanged += new System.EventHandler(this.cmbBusho_SelectedIndexChanged);
+            this.cmbBusho.TextUpdate += new System.EventHandler(this.cmbBusho_TextUpdate);
             // 
             // cmbSex
             // 
@@ -85,6 +87,8 @@
             this.cmbSex.Size = new System.Drawing.Size(37, 20);
             this.cmbSex.TabIndex = 9;
             this.cmbSex.SelectedIndexChanged += new System.EventHandler(this.cmbSex_SelectedIndexChanged);
+            this.cmbSex.TextUpdate += new System.EventHandler(this.cmbSex_TextUpdate);
+            this.cmbSex.TextChanged += new System.EventHandler(this.cmbSex_TextChanged);
             // 
             // cmbYaku
             // 
@@ -94,6 +98,7 @@
             this.cmbYaku.Size = new System.Drawing.Size(75, 20);
             this.cmbYaku.TabIndex = 10;
             this.cmbYaku.SelectedIndexChanged += new System.EventHandler(this.cmbYaku_SelectedIndexChanged);
+            this.cmbYaku.TextUpdate += new System.EventHandler(this.cmbYaku_TextUpdate);
             // 
             // cmbEnter
             // 
@@ -103,6 +108,7 @@
             this.cmbEnter.Size = new System.Drawing.Size(57, 20);
             this.cmbEnter.TabIndex = 11;
             this.cmbEnter.SelectedIndexChanged += new System.EventHandler(this.cmbEnter_SelectedIndexChanged);
+            this.cmbEnter.TextUpdate += new System.EventHandler(this.cmbEnter_TextUpdate);
             // 
             // txtid
             // 
@@ -165,11 +171,22 @@
             this.buttonnext.UseVisualStyleBackColor = true;
             this.buttonnext.Click += new System.EventHandler(this.buttonnext_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 249);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 12);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // listForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 265);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonnext);
             this.Controls.Add(this.buttonbefore);
             this.Controls.Add(this.dgvIppan);
@@ -207,5 +224,6 @@
         private System.Windows.Forms.DataGridView dgvIppan;
         private System.Windows.Forms.Button buttonbefore;
         private System.Windows.Forms.Button buttonnext;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -56,6 +56,7 @@
             this.buttonnext.TabIndex = 30;
             this.buttonnext.Text = "次へ";
             this.buttonnext.UseVisualStyleBackColor = true;
+            this.buttonnext.Click += new System.EventHandler(this.buttonnext_Click);
             // 
             // buttonbefore
             // 
@@ -65,6 +66,7 @@
             this.buttonbefore.TabIndex = 29;
             this.buttonbefore.Text = "前へ";
             this.buttonbefore.UseVisualStyleBackColor = true;
+            this.buttonbefore.Click += new System.EventHandler(this.buttonbefore_Click);
             // 
             // dgvYakuin
             // 
@@ -77,6 +79,7 @@
             this.dgvYakuin.RowTemplate.Height = 21;
             this.dgvYakuin.Size = new System.Drawing.Size(1117, 179);
             this.dgvYakuin.TabIndex = 28;
+            this.dgvYakuin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvYakuin_CellContentClick);
             // 
             // buttonsearch
             // 
@@ -103,6 +106,7 @@
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(46, 19);
             this.txtid.TabIndex = 25;
+            this.txtid.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtid_MaskInputRejected);
             // 
             // cmbEnter
             // 
@@ -127,6 +131,7 @@
             this.cmbSex.Name = "cmbSex";
             this.cmbSex.Size = new System.Drawing.Size(37, 20);
             this.cmbSex.TabIndex = 22;
+            this.cmbSex.SelectedIndexChanged += new System.EventHandler(this.cmbSex_SelectedIndexChanged);
             // 
             // cmbBusho
             // 

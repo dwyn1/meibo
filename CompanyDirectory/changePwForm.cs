@@ -15,9 +15,11 @@ namespace CompanyDirectory
         string s1;
         string s2;
         string s3;
-        public changePwForm()
+        int y;
+        public changePwForm(int x)
         {
             InitializeComponent();
+            this.SendDataB = x;
         }
 
         private void txtNowPw_TextChanged(object sender, EventArgs e)
@@ -38,11 +40,12 @@ namespace CompanyDirectory
         private void buttonPwOK_Click(object sender, EventArgs e)
         {
             Pass pass = new Pass();
-            if (pass.show(s1) == 0 & pass.show(s2) == 0 & s2 == s3)
-            {
+            y = this.SendDataB;
+            if (pass.show(s1) == 0 & pass.show(s2) == 0&s1==y.ToString() &s2 == s3)
+            {   //DBに更新後のPASSを渡す。
                 this.Close();
             }
-            else if (pass.show(s1) != 0 & pass.show(s2) != 0 & s2 != s3)
+            else if (pass.show(s1) != 0 || pass.show(s2) != 0 || s2 != s3 || s1 != y.ToString())
             {
                 txtNowPw.Text = "";
                 txtNewPw.Text = "";
@@ -50,7 +53,18 @@ namespace CompanyDirectory
                 label1.ForeColor = System.Drawing.Color.Red;
                 label1.Text = "入力形式にミスがあります";
             }
+        }
+        public int SendDataB
+        {
+            set
+            {
+                y = value;
 
+            }
+            get
+            {
+                return y;
+            }
         }
     }
 }

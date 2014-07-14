@@ -53,6 +53,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(168, 194);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabBusho
             // 
@@ -74,6 +75,7 @@
             this.dgvBusho.Name = "dgvBusho";
             this.dgvBusho.ReadOnly = true;
             this.dgvBusho.RowTemplate.Height = 21;
+            this.dgvBusho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBusho.Size = new System.Drawing.Size(147, 155);
             this.dgvBusho.TabIndex = 0;
             // 
@@ -120,6 +122,7 @@
             this.buttonAdd.TabIndex = 59;
             this.buttonAdd.Text = "追加";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonChange
             // 
@@ -130,6 +133,7 @@
             this.buttonChange.TabIndex = 58;
             this.buttonChange.Text = "変更";
             this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
             // buttoncancel
             // 
