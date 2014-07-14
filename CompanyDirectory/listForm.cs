@@ -144,7 +144,7 @@ namespace CompanyDirectory
                 dgvIppan.Columns[i].Width = ippan_list_width[i];
             }
 
-            //          表示データヘッダー部分の編集（不要かもしれません）
+            //表示データヘッダー部分の編集（不要かもしれません）
             string[] ippanlist = new string[] { "ID", "氏名", "かな氏名", "部署名", "役職名", "性別", "入社年月日", "メール","緊急連絡先" };
             for (int i = 0; ippanlist.Length > i; i++)
             {
