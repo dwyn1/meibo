@@ -98,11 +98,13 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="listForm.cs">
+    <Compile Include="..\..\..\Pictures\listForm.cs">
       <SubType>Form</SubType>
+      <Link>listForm.cs</Link>
     </Compile>
-    <Compile Include="listForm.Designer.cs">
+    <Compile Include="..\..\..\Pictures\listForm.Designer.cs">
       <DependentUpon>listForm.cs</DependentUpon>
+      <Link>listForm.Designer.cs</Link>
     </Compile>
     <Compile Include="managelistForm.cs">
       <SubType>Form</SubType>
@@ -175,8 +177,9 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="listForm.resx">
+    <EmbeddedResource Include="..\..\..\Pictures\listForm.resx">
       <DependentUpon>listForm.cs</DependentUpon>
+      <Link>listForm.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="managelistForm.resx">
       <DependentUpon>managelistForm.cs</DependentUpon>
