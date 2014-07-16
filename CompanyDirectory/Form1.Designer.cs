@@ -34,7 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.buttonOK = new System.Windows.Forms.Button();
-            this.Masktxtid = new System.Windows.Forms.MaskedTextBox();
+            this.txtid = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -92,20 +92,20 @@
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
-            // Masktxtid
+            // txtid
             // 
-            this.Masktxtid.Location = new System.Drawing.Point(92, 53);
-            this.Masktxtid.Name = "Masktxtid";
-            this.Masktxtid.Size = new System.Drawing.Size(100, 19);
-            this.Masktxtid.TabIndex = 0;
-            this.Masktxtid.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Masktxtid_MaskInputRejected);
+            this.txtid.Location = new System.Drawing.Point(92, 53);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(100, 19);
+            this.txtid.TabIndex = 0;
+            this.txtid.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Masktxtid_MaskInputRejected);
             // 
             // IdPwForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(237, 154);
-            this.Controls.Add(this.Masktxtid);
+            this.Controls.Add(this.txtid);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label4);
@@ -127,7 +127,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.MaskedTextBox Masktxtid;
+        private System.Windows.Forms.MaskedTextBox txtid;
     }
 }
 

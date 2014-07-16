@@ -23,7 +23,7 @@ namespace CompanyDirectory
         int j = 0;
         private void Masktxtid_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            s11 = Masktxtid.Text;
+            s11 = txtid.Text;
         }
 //        private void txtid_TextChanged(object sender, EventArgs e)
 //        {
@@ -70,7 +70,7 @@ namespace CompanyDirectory
                     }
                     else
                     {
-                        Masktxtid.Text = "";
+                        txtid.Text = "";
                         textBox2.Text = "";
                     }
                     j++;
@@ -88,7 +88,7 @@ namespace CompanyDirectory
             }
             else
             {
-                Masktxtid.Text = "";
+                txtid.Text = "";
                 textBox2.Text = "";
                 label1.ForeColor = System.Drawing.Color.Red;
                 label1.Text = "入力形式にミスがあります";
