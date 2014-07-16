@@ -95,10 +95,11 @@
             // txtid
             // 
             this.txtid.Location = new System.Drawing.Point(92, 53);
+            this.txtid.Mask = "999";
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(100, 19);
             this.txtid.TabIndex = 0;
-            this.txtid.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Masktxtid_MaskInputRejected);
+            this.txtid.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtid_MaskInputRejected);
             // 
             // IdPwForm
             // 

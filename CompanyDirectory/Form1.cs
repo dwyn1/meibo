@@ -21,7 +21,7 @@ namespace CompanyDirectory
             InitializeComponent();
         }
         int j = 0;
-        private void Masktxtid_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void txtid_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
             s11 = txtid.Text;
         }
