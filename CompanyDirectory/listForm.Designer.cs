@@ -47,7 +47,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(66, 14);
+            this.txtName.Location = new System.Drawing.Point(64, 27);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(70, 19);
             this.txtName.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // txtKana
             // 
-            this.txtKana.Location = new System.Drawing.Point(142, 14);
+            this.txtKana.Location = new System.Drawing.Point(140, 27);
             this.txtKana.Name = "txtKana";
             this.txtKana.Size = new System.Drawing.Size(72, 19);
             this.txtKana.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(562, 14);
+            this.txtMail.Location = new System.Drawing.Point(560, 27);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(100, 19);
             this.txtMail.TabIndex = 8;
@@ -72,7 +72,7 @@
             // cmbBusho
             // 
             this.cmbBusho.FormattingEnabled = true;
-            this.cmbBusho.Location = new System.Drawing.Point(221, 14);
+            this.cmbBusho.Location = new System.Drawing.Point(219, 27);
             this.cmbBusho.Name = "cmbBusho";
             this.cmbBusho.Size = new System.Drawing.Size(75, 20);
             this.cmbBusho.TabIndex = 3;
@@ -82,7 +82,7 @@
             // cmbSex
             // 
             this.cmbSex.FormattingEnabled = true;
-            this.cmbSex.Location = new System.Drawing.Point(383, 14);
+            this.cmbSex.Location = new System.Drawing.Point(381, 27);
             this.cmbSex.Name = "cmbSex";
             this.cmbSex.Size = new System.Drawing.Size(37, 20);
             this.cmbSex.TabIndex = 5;
@@ -93,7 +93,7 @@
             // cmbYaku
             // 
             this.cmbYaku.FormattingEnabled = true;
-            this.cmbYaku.Location = new System.Drawing.Point(302, 14);
+            this.cmbYaku.Location = new System.Drawing.Point(300, 27);
             this.cmbYaku.Name = "cmbYaku";
             this.cmbYaku.Size = new System.Drawing.Size(75, 20);
             this.cmbYaku.TabIndex = 4;
@@ -103,7 +103,7 @@
             // cmbEnter
             // 
             this.cmbEnter.FormattingEnabled = true;
-            this.cmbEnter.Location = new System.Drawing.Point(499, 14);
+            this.cmbEnter.Location = new System.Drawing.Point(497, 27);
             this.cmbEnter.Name = "cmbEnter";
             this.cmbEnter.Size = new System.Drawing.Size(57, 20);
             this.cmbEnter.TabIndex = 7;
@@ -112,7 +112,7 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(14, 14);
+            this.txtid.Location = new System.Drawing.Point(12, 27);
             this.txtid.Mask = "999999";
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(46, 19);
@@ -121,7 +121,7 @@
             // 
             // txtEnterday
             // 
-            this.txtEnterday.Location = new System.Drawing.Point(426, 15);
+            this.txtEnterday.Location = new System.Drawing.Point(424, 28);
             this.txtEnterday.Mask = "0000年90月90日";
             this.txtEnterday.Name = "txtEnterday";
             this.txtEnterday.Size = new System.Drawing.Size(73, 19);
@@ -131,7 +131,7 @@
             // 
             // buttonsearch
             // 
-            this.buttonsearch.Location = new System.Drawing.Point(668, 10);
+            this.buttonsearch.Location = new System.Drawing.Point(666, 23);
             this.buttonsearch.Name = "buttonsearch";
             this.buttonsearch.Size = new System.Drawing.Size(75, 23);
             this.buttonsearch.TabIndex = 9;
@@ -144,16 +144,17 @@
             this.dgvIppan.AllowUserToAddRows = false;
             this.dgvIppan.AllowUserToDeleteRows = false;
             this.dgvIppan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIppan.Location = new System.Drawing.Point(14, 39);
+            this.dgvIppan.Location = new System.Drawing.Point(12, 52);
             this.dgvIppan.Name = "dgvIppan";
             this.dgvIppan.ReadOnly = true;
+            this.dgvIppan.RowHeadersWidth = 19;
             this.dgvIppan.RowTemplate.Height = 21;
-            this.dgvIppan.Size = new System.Drawing.Size(719, 233);
+            this.dgvIppan.Size = new System.Drawing.Size(695, 232);
             this.dgvIppan.TabIndex = 10;
             // 
             // buttonbefore
             // 
-            this.buttonbefore.Location = new System.Drawing.Point(296, 284);
+            this.buttonbefore.Location = new System.Drawing.Point(294, 297);
             this.buttonbefore.Name = "buttonbefore";
             this.buttonbefore.Size = new System.Drawing.Size(75, 23);
             this.buttonbefore.TabIndex = 11;
@@ -163,7 +164,7 @@
             // 
             // buttonnext
             // 
-            this.buttonnext.Location = new System.Drawing.Point(399, 284);
+            this.buttonnext.Location = new System.Drawing.Point(397, 297);
             this.buttonnext.Name = "buttonnext";
             this.buttonnext.Size = new System.Drawing.Size(75, 23);
             this.buttonnext.TabIndex = 12;
@@ -174,18 +175,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 284);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 12);
+            this.label1.Size = new System.Drawing.Size(234, 12);
             this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "検索条件を入力し、検索ボタンを押してください。";
             // 
             // listForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 319);
+            this.ClientSize = new System.Drawing.Size(752, 330);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonnext);
             this.Controls.Add(this.buttonbefore);

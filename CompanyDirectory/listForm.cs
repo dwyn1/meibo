@@ -155,7 +155,7 @@ namespace CompanyDirectory
         {
             dgvIppan.DataSource = ds;
             dgvIppan.DataMember = ds.Tables[0].TableName;
-            int[] ippan_list_width = new int[] { 30, 78, 81, 81, 81, 45, 79, 200 }; //size720, 235
+            int[] ippan_list_width = new int[] { 30, 78, 81, 81, 81, 43, 79, 200 }; //size720, 235
             for (int i = 0; ippan_list_width.Length > i; i++)
             {
                 dgvIppan.Columns[i].Width = ippan_list_width[i];
@@ -467,7 +467,7 @@ namespace CompanyDirectory
 
             sqlText += ") AS motodata WHERE num between " + (1 + (j * 10)) + "and " + (10 + (j * 10)) + ";";
 
-            label1.Text = sqlText;
+           // label1.Text = sqlText;
 
             string sqlText2;
             sqlText2 = "SELECT MAX(num) FROM ";
@@ -639,7 +639,7 @@ namespace CompanyDirectory
 
             sqlText += ") AS motodata WHERE num between " + (1 + (j * 10)) + " and " + (10 + (j * 10)) + ";";
 
-            label1.Text = sqlText;
+           // label1.Text = sqlText;
             //sqlText2
             command.Connection = conn;
 
