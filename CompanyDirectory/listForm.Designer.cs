@@ -144,11 +144,11 @@
             this.dgvIppan.AllowUserToAddRows = false;
             this.dgvIppan.AllowUserToDeleteRows = false;
             this.dgvIppan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIppan.Location = new System.Drawing.Point(13, 39);
+            this.dgvIppan.Location = new System.Drawing.Point(14, 39);
             this.dgvIppan.Name = "dgvIppan";
             this.dgvIppan.ReadOnly = true;
             this.dgvIppan.RowTemplate.Height = 21;
-            this.dgvIppan.Size = new System.Drawing.Size(750, 235);
+            this.dgvIppan.Size = new System.Drawing.Size(720, 235);
             this.dgvIppan.TabIndex = 10;
             // 
             // buttonbefore
@@ -174,7 +174,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 249);
+            this.label1.Location = new System.Drawing.Point(12, 295);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 12);
             this.label1.TabIndex = 13;
