@@ -21,11 +21,14 @@ namespace CompanyDirectory
             InitializeComponent();
         }
         int j = 0;
-
-        private void txtid_TextChanged(object sender, EventArgs e)
+        private void Masktxtid_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            s11 = txtid.Text;
+            s11 = Masktxtid.Text;
         }
+//        private void txtid_TextChanged(object sender, EventArgs e)
+//        {
+//            s11 = txtid.Text;
+//        }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -67,7 +70,7 @@ namespace CompanyDirectory
                     }
                     else
                     {
-                        txtid.Text = "";
+                        Masktxtid.Text = "";
                         textBox2.Text = "";
                     }
                     j++;
@@ -85,7 +88,7 @@ namespace CompanyDirectory
             }
             else
             {
-                txtid.Text = "";
+                Masktxtid.Text = "";
                 textBox2.Text = "";
                 label1.ForeColor = System.Drawing.Color.Red;
                 label1.Text = "入力形式にミスがあります";
@@ -100,6 +103,7 @@ namespace CompanyDirectory
             //personalForm pf = new personalForm(i);
             cf.SendData = i;
         }
+
     }
 }
     class Pass                             //PASSが半角英数以外８文字以外なら1を返す。PASS変更でも使用。
