@@ -21,13 +21,10 @@ namespace CompanyDirectory
             InitializeComponent();
         }
         int j = 0;
-//        private void txtid_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
- //       {
- //       }
-        private void txtid_TextChanged(object sender, EventArgs e)
-        {
-            s11 = txtid.Text;
-        }
+//        private void txtid_TextChanged(object sender, EventArgs e)
+//        {
+//            s11 = txtid.Text;
+//        }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -40,7 +37,9 @@ namespace CompanyDirectory
             ID id = new ID();
             CheckID checkid = new CheckID();
             chooseForm cf = new chooseForm();
-//            s11 = txtid.Text;//動作のため一時避難
+
+            s11 = txtid.Text;//TextChangedが動かないため、移動
+
             if (id.show(s11) == 0 & pass.show(s2) == 0)    //片側の結果で弾くのではなく両側で判定してほしいので&は一つ
             {
                 try 
