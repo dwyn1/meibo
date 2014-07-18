@@ -112,10 +112,10 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(12, 27);
-            this.txtid.Mask = "999999";
+            this.txtid.Location = new System.Drawing.Point(36, 27);
+            this.txtid.Mask = "999";
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(50, 19);
+            this.txtid.Size = new System.Drawing.Size(25, 19);
             this.txtid.TabIndex = 0;
             this.txtid.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtid_MaskInputRejected);
             // 
@@ -144,12 +144,12 @@
             this.dgvIppan.AllowUserToAddRows = false;
             this.dgvIppan.AllowUserToDeleteRows = false;
             this.dgvIppan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIppan.Location = new System.Drawing.Point(12, 52);
+            this.dgvIppan.Location = new System.Drawing.Point(36, 52);
             this.dgvIppan.Name = "dgvIppan";
             this.dgvIppan.ReadOnly = true;
             this.dgvIppan.RowHeadersWidth = 25;
             this.dgvIppan.RowTemplate.Height = 21;
-            this.dgvIppan.Size = new System.Drawing.Size(740, 232);
+            this.dgvIppan.Size = new System.Drawing.Size(716, 232);
             this.dgvIppan.TabIndex = 12;
             // 
             // buttonbefore
@@ -203,6 +203,7 @@
             this.Name = "listForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "一般社員名簿";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.listForm_FormClosing);
             this.Load += new System.EventHandler(this.listForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIppan)).EndInit();
             this.ResumeLayout(false);

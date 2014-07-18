@@ -23,6 +23,8 @@ namespace CompanyDirectory
         string sid;
         string sx;
 
+        int mail;
+
         int? i0;
         string s0 = "";
         string s1 = "";
@@ -34,6 +36,16 @@ namespace CompanyDirectory
         string s6;
         string s7 = "";
         int z;
+
+        string saveid="";
+        string savename="";
+        string savekana="";
+        string savebusho="";
+        string saveyaku="";
+        string savemail = "";
+        string savesex = "";
+        string savedate = "";
+        
         public listForm()
         {
             InitializeComponent();
@@ -78,7 +90,9 @@ namespace CompanyDirectory
             cmbEnter.Items.Add("同一");
             cmbEnter.Items.Add("前");
             cmbEnter.Items.Add("後");
-       
+
+
+            
         }
         private void buttonbefore_Click(object sender, EventArgs e)
         {
@@ -158,7 +172,9 @@ namespace CompanyDirectory
 
                 dgvIppan.DataSource = ds;
                 dgvIppan.DataMember = ds.Tables[0].TableName;
+
                 int[] ippan_list_width = new int[] { 31, 76, 81, 81, 81, 53, 110, 200 };
+                dgvIppan.RowHeadersVisible = false;
                 for (int i = 0; ippan_list_width.Length > i; i++)
                 {
                     dgvIppan.Columns[i].Width = ippan_list_width[i];
@@ -275,22 +291,24 @@ namespace CompanyDirectory
             sid = txtid.Text;
             buttonbefore.Visible = false;
             buttonnext.Visible = false;
+            saveid = sid;
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
 
             s0 = txtName.Text;
+            savename = s0;
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
             System.Text.RegularExpressions.Regex rs =
             new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
-            if (s0.Length > 8 || rs.IsMatch(s0) == true)
+            if (s0.Length > 20 || rs.IsMatch(s0) == true)
             {
                 s0 = "";
                 txtName.Text = "";
             }
-            buttonbefore.Visible = false;
-            buttonnext.Visible = false;
-            if (s0 == ""&&txtKana.Text==""&&txtMail.Text==""&&cmbYaku.Text==""&&cmbBusho.Text==""&&cmbSex.Text=="")
+            if (s0 == ""&&txtKana.Text==savekana&&txtMail.Text==savemail&&cmbYaku.Text==saveyaku&&cmbBusho.Text==savebusho&&cmbSex.Text==savesex/*&&txtEnterday.Text==savedate*/)
             {
                 if (SendDataE<=10)
                 {
@@ -320,14 +338,15 @@ namespace CompanyDirectory
             System.Text.RegularExpressions.Regex rs =
            new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
             s1 = txtKana.Text;
-            if (s1.Length > 8 || rs.IsMatch(s1) == true)
+            savekana = s1;
+            if (s1.Length > 20 || rs.IsMatch(s1) == true)
             {
                 s1 = "";
                 txtKana.Text = "";
             }
             buttonbefore.Visible = false;
             buttonnext.Visible = false;
-            if (s1 == "" && txtName.Text == "" && txtMail.Text == "" && cmbYaku.Text == "" && cmbBusho.Text == "" && cmbSex.Text == "")
+            if (s1 == "" && txtName.Text == savename && txtMail.Text == savemail && cmbYaku.Text == saveyaku && cmbBusho.Text == savebusho && cmbSex.Text == savesex/*&& txtEnterday.Text == savedate*/)
             {
                 if (SendDataE <= 10)
                 {
@@ -355,9 +374,10 @@ namespace CompanyDirectory
         private void cmbBusho_SelectedIndexChanged(object sender, EventArgs e)
         {
             s2 = cmbBusho.Text;
-                        buttonbefore.Visible = false;
+            savebusho = s2;
+            buttonbefore.Visible = false;
             buttonnext.Visible = false;
-            if (s2 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbYaku.Text == "" && cmbSex.Text == "")
+            if (s2 == "" && txtName.Text == savename && txtKana.Text == savekana && txtMail.Text == savemail && cmbYaku.Text == saveyaku && cmbSex.Text == savesex /*&& txtEnterday.Text == savedate*/)
             {
                 if (SendDataE <= 10)
                 {
@@ -385,9 +405,10 @@ namespace CompanyDirectory
         private void cmbYaku_SelectedIndexChanged(object sender, EventArgs e)
         {
             s3 = cmbYaku.Text;
+            saveyaku = s3;
             buttonbefore.Visible = false;
             buttonnext.Visible = false;
-            if (s3 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == ""&&cmbBusho.Text==""&&cmbSex.Text=="")
+            if (s3 == "" && txtName.Text == savename && txtKana.Text == savekana && txtMail.Text == savemail && cmbBusho.Text == savebusho && cmbSex.Text == savesex /*&& txtEnterday.Text == savedate*/)
             {
                 if (SendDataE <= 10)
                 {
@@ -415,9 +436,10 @@ namespace CompanyDirectory
         private void cmbSex_SelectedIndexChanged(object sender, EventArgs e)
         {
             s4 = cmbSex.Text;
+            savesex = s4;
             buttonbefore.Visible = false;
             buttonnext.Visible = false;
-            if (s4 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbBusho.Text == ""&&cmbYaku.Text=="")
+            if (s4 == "" && txtName.Text == savename && txtKana.Text == savekana && txtMail.Text == savemail && cmbBusho.Text == savebusho && cmbYaku.Text == saveyaku /*&& txtEnterday.Text == savedate*/)
             {
                 if (SendDataE <= 10)
                 {
@@ -444,7 +466,35 @@ namespace CompanyDirectory
 
         private void txtEnterday_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
+            s5 = txtEnterday.Text;
+            savedate = s5;
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            System.Text.RegularExpressions.Regex rs =
+            new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
+            if (s5 == "" && txtName.Text == savename && txtKana.Text == savekana && txtMail.Text == savemail && cmbYaku.Text == saveyaku && cmbBusho.Text == savebusho && cmbSex.Text == savesex /*&& txtEnterday.Text == savedate*/)
+            {
+                if (SendDataE <= 10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE > 10 && j == 0)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+                else if (SendDataE > 10 && SendDataE - 10 * (j + 1) < 1 && j > 0)
+                {
+                    buttonnext.Visible = false;
+                    buttonbefore.Visible = true;
+                }
+                else
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = true;
+                }
+            }
         }
 
         private void cmbEnter_SelectedIndexChanged(object sender, EventArgs e)
@@ -457,14 +507,16 @@ namespace CompanyDirectory
             System.Text.RegularExpressions.Regex rs =
             new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
             s7 = txtMail.Text;
-            if (s7.Length > 20 || rs.IsMatch(s7) == true)
+            savemail = s7;
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s7.Length > 40 || rs.IsMatch(s7) == true)
             {
                 s7 = "";
                 txtMail.Text = "";
             }
-            buttonbefore.Visible = false;
-            buttonnext.Visible = false;
-            if (s1 == "" && txtName.Text == "" && txtKana.Text == "" && cmbYaku.Text == ""&&cmbBusho.Text=="")
+
+            if (s7 == "" && txtName.Text == savename && txtKana.Text == savekana && cmbYaku.Text == saveyaku && cmbBusho.Text == savebusho && cmbSex.Text == savesex/* && txtEnterday.Text == savedate*/)
             {
                 if (SendDataE <= 10)
                 {
@@ -493,7 +545,6 @@ namespace CompanyDirectory
         {
             buttonbefore.Visible = false;
             buttonnext.Visible = false;
-
         }
         public int? SendDataC
         {
@@ -886,32 +937,7 @@ namespace CompanyDirectory
 
         private void cmbSex_TextChanged(object sender, EventArgs e)
         {
-            s4 = cmbSex.Text;
-            buttonbefore.Visible = false;
-            buttonnext.Visible = false;
-            if (s4 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbYaku.Text == "" && cmbBusho.Text == "")
-            {
-                if (SendDataE <= 10)
-                {
-                    buttonbefore.Visible = false;
-                    buttonnext.Visible = false;
-                }
-                else if (SendDataE > 10 && j == 0)
-                {
-                    buttonnext.Visible = true;
-                    buttonbefore.Visible = false;
-                }
-                else if (SendDataE > 10 && SendDataE - 10 * (j + 1) < 1 && j > 0)
-                {
-                    buttonnext.Visible = false;
-                    buttonbefore.Visible = true;
-                }
-                else
-                {
-                    buttonnext.Visible = true;
-                    buttonbefore.Visible = true;
-                }
-            }
+          
         }
 
         private void cmbYaku_TextUpdate(object sender, EventArgs e)
@@ -919,14 +945,16 @@ namespace CompanyDirectory
             System.Text.RegularExpressions.Regex rs =
              new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
             s3 = cmbYaku.Text;
+            saveyaku = s3;
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
             if (s3.Length > 20 || rs.IsMatch(s3) == true)
             {
                 s3 = "";
                 cmbYaku.Text = "";
             }
-            buttonbefore.Visible = false;
-            buttonnext.Visible = false;
-            if (s3 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbBusho.Text == "" && cmbSex.Text == "")
+
+            if (s3 == "" && txtName.Text == savename && txtKana.Text == savekana && txtMail.Text == savemail && cmbBusho.Text == savebusho && cmbSex.Text == savesex && txtEnterday.Text == savedate)
             {
                 if (SendDataE <= 10)
                 {
@@ -956,14 +984,16 @@ namespace CompanyDirectory
             System.Text.RegularExpressions.Regex rs =
              new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
             s2 = cmbBusho.Text;
+            savebusho = s2;
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
             if (s2.Length > 20 || rs.IsMatch(s2) == true)
             {
                 s2 = "";
                 cmbBusho.Text = "";
             }
-            buttonbefore.Visible = false;
-            buttonnext.Visible = false;
-            if (s3 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbYaku.Text == "" && cmbSex.Text == "")
+
+            if (s2 == "" && txtName.Text == savename && txtKana.Text == savekana && txtMail.Text == savemail && cmbYaku.Text == saveyaku && cmbSex.Text == savesex && txtEnterday.Text == savedate)
             {
                 if (SendDataE <= 10)
                 {
@@ -1019,6 +1049,7 @@ namespace CompanyDirectory
             System.Text.RegularExpressions.Regex rs =
             new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
             s4 = cmbSex.Text;
+            savesex = s4;
             buttonbefore.Visible = false;
             buttonnext.Visible = false;
             if (s4.Length > 10 || rs.IsMatch(s4) == true)
@@ -1028,7 +1059,7 @@ namespace CompanyDirectory
             }
             buttonbefore.Visible = false;
             buttonnext.Visible = false;
-            if (s4 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbYaku.Text == "" && cmbBusho.Text == "")
+            if (s4 == "" && txtName.Text == savename && txtKana.Text == savekana && txtMail.Text == savemail && cmbYaku.Text == saveyaku && cmbBusho.Text == savebusho && txtEnterday.Text == savedate)
             {
                 if (SendDataE <= 10)
                 {
@@ -1051,6 +1082,11 @@ namespace CompanyDirectory
                     buttonbefore.Visible = true;
                 }
             }
+        }
+
+        private void listForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

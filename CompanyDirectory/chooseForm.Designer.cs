@@ -72,6 +72,7 @@
             this.Controls.Add(this.label1);
             this.Name = "chooseForm";
             this.Text = "閲覧内容";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.chooseForm_FormClosing_1);
             this.Load += new System.EventHandler(this.chooseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -42,6 +42,7 @@ namespace CompanyDirectory
             {
                 
                 listForm lf = new listForm();
+                this.Visible = false;
                 lf.ShowDialog(this);
                 
             }
@@ -67,5 +68,10 @@ namespace CompanyDirectory
         {
 
         }
+        private void chooseForm_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }
