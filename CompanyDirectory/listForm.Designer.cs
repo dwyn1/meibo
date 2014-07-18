@@ -47,7 +47,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(64, 27);
+            this.txtName.Location = new System.Drawing.Point(68, 27);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(70, 19);
             this.txtName.TabIndex = 1;
@@ -55,24 +55,24 @@
             // 
             // txtKana
             // 
-            this.txtKana.Location = new System.Drawing.Point(140, 27);
+            this.txtKana.Location = new System.Drawing.Point(144, 27);
             this.txtKana.Name = "txtKana";
-            this.txtKana.Size = new System.Drawing.Size(72, 19);
+            this.txtKana.Size = new System.Drawing.Size(75, 19);
             this.txtKana.TabIndex = 2;
             this.txtKana.TextChanged += new System.EventHandler(this.txtKana_TextChanged);
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(560, 27);
+            this.txtMail.Location = new System.Drawing.Point(595, 27);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(100, 19);
+            this.txtMail.Size = new System.Drawing.Size(150, 19);
             this.txtMail.TabIndex = 8;
             this.txtMail.TextChanged += new System.EventHandler(this.txtMail_TextChanged);
             // 
             // cmbBusho
             // 
             this.cmbBusho.FormattingEnabled = true;
-            this.cmbBusho.Location = new System.Drawing.Point(219, 27);
+            this.cmbBusho.Location = new System.Drawing.Point(225, 27);
             this.cmbBusho.Name = "cmbBusho";
             this.cmbBusho.Size = new System.Drawing.Size(75, 20);
             this.cmbBusho.TabIndex = 3;
@@ -82,9 +82,9 @@
             // cmbSex
             // 
             this.cmbSex.FormattingEnabled = true;
-            this.cmbSex.Location = new System.Drawing.Point(381, 27);
+            this.cmbSex.Location = new System.Drawing.Point(387, 27);
             this.cmbSex.Name = "cmbSex";
-            this.cmbSex.Size = new System.Drawing.Size(37, 20);
+            this.cmbSex.Size = new System.Drawing.Size(50, 20);
             this.cmbSex.TabIndex = 5;
             this.cmbSex.SelectedIndexChanged += new System.EventHandler(this.cmbSex_SelectedIndexChanged);
             this.cmbSex.TextUpdate += new System.EventHandler(this.cmbSex_TextUpdate);
@@ -93,7 +93,7 @@
             // cmbYaku
             // 
             this.cmbYaku.FormattingEnabled = true;
-            this.cmbYaku.Location = new System.Drawing.Point(300, 27);
+            this.cmbYaku.Location = new System.Drawing.Point(306, 27);
             this.cmbYaku.Name = "cmbYaku";
             this.cmbYaku.Size = new System.Drawing.Size(75, 20);
             this.cmbYaku.TabIndex = 4;
@@ -103,9 +103,9 @@
             // cmbEnter
             // 
             this.cmbEnter.FormattingEnabled = true;
-            this.cmbEnter.Location = new System.Drawing.Point(497, 27);
+            this.cmbEnter.Location = new System.Drawing.Point(539, 27);
             this.cmbEnter.Name = "cmbEnter";
-            this.cmbEnter.Size = new System.Drawing.Size(57, 20);
+            this.cmbEnter.Size = new System.Drawing.Size(50, 20);
             this.cmbEnter.TabIndex = 7;
             this.cmbEnter.SelectedIndexChanged += new System.EventHandler(this.cmbEnter_SelectedIndexChanged);
             this.cmbEnter.TextUpdate += new System.EventHandler(this.cmbEnter_TextUpdate);
@@ -115,23 +115,23 @@
             this.txtid.Location = new System.Drawing.Point(12, 27);
             this.txtid.Mask = "999999";
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(46, 19);
+            this.txtid.Size = new System.Drawing.Size(50, 19);
             this.txtid.TabIndex = 0;
             this.txtid.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtid_MaskInputRejected);
             // 
             // txtEnterday
             // 
-            this.txtEnterday.Location = new System.Drawing.Point(424, 28);
+            this.txtEnterday.Location = new System.Drawing.Point(443, 27);
             this.txtEnterday.Mask = "0000年90月90日";
             this.txtEnterday.Name = "txtEnterday";
-            this.txtEnterday.Size = new System.Drawing.Size(73, 19);
+            this.txtEnterday.Size = new System.Drawing.Size(90, 19);
             this.txtEnterday.TabIndex = 6;
             this.txtEnterday.ValidatingType = typeof(System.DateTime);
             this.txtEnterday.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtEnterday_MaskInputRejected);
             // 
             // buttonsearch
             // 
-            this.buttonsearch.Location = new System.Drawing.Point(666, 23);
+            this.buttonsearch.Location = new System.Drawing.Point(751, 25);
             this.buttonsearch.Name = "buttonsearch";
             this.buttonsearch.Size = new System.Drawing.Size(75, 23);
             this.buttonsearch.TabIndex = 9;
@@ -147,17 +147,17 @@
             this.dgvIppan.Location = new System.Drawing.Point(12, 52);
             this.dgvIppan.Name = "dgvIppan";
             this.dgvIppan.ReadOnly = true;
-            this.dgvIppan.RowHeadersWidth = 19;
+            this.dgvIppan.RowHeadersWidth = 25;
             this.dgvIppan.RowTemplate.Height = 21;
-            this.dgvIppan.Size = new System.Drawing.Size(695, 232);
-            this.dgvIppan.TabIndex = 10;
+            this.dgvIppan.Size = new System.Drawing.Size(740, 232);
+            this.dgvIppan.TabIndex = 12;
             // 
             // buttonbefore
             // 
             this.buttonbefore.Location = new System.Drawing.Point(294, 297);
             this.buttonbefore.Name = "buttonbefore";
             this.buttonbefore.Size = new System.Drawing.Size(75, 23);
-            this.buttonbefore.TabIndex = 11;
+            this.buttonbefore.TabIndex = 10;
             this.buttonbefore.Text = "前へ";
             this.buttonbefore.UseVisualStyleBackColor = true;
             this.buttonbefore.Click += new System.EventHandler(this.buttonbefore_Click);
@@ -167,7 +167,7 @@
             this.buttonnext.Location = new System.Drawing.Point(397, 297);
             this.buttonnext.Name = "buttonnext";
             this.buttonnext.Size = new System.Drawing.Size(75, 23);
-            this.buttonnext.TabIndex = 12;
+            this.buttonnext.TabIndex = 11;
             this.buttonnext.Text = "次へ";
             this.buttonnext.UseVisualStyleBackColor = true;
             this.buttonnext.Click += new System.EventHandler(this.buttonnext_Click);
@@ -185,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 330);
+            this.ClientSize = new System.Drawing.Size(835, 330);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonnext);
             this.Controls.Add(this.buttonbefore);
@@ -201,6 +201,7 @@
             this.Controls.Add(this.txtKana);
             this.Controls.Add(this.txtName);
             this.Name = "listForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "一般社員名簿";
             this.Load += new System.EventHandler(this.listForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIppan)).EndInit();

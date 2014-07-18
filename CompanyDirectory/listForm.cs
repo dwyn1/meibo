@@ -33,6 +33,7 @@ namespace CompanyDirectory
         DateTime? dt;
         string s6;
         string s7 = "";
+        int z;
         public listForm()
         {
             InitializeComponent();
@@ -40,7 +41,6 @@ namespace CompanyDirectory
             string sex = "";
             string busho = "";
             string yaku = "";
-
             List<string> sexlist = new List<string>();
             ret = getSexList(ref sexlist);                //性別
             for (int i = 0; i < sexlist.Count; i++)
@@ -78,6 +78,7 @@ namespace CompanyDirectory
             cmbEnter.Items.Add("同一");
             cmbEnter.Items.Add("前");
             cmbEnter.Items.Add("後");
+       
         }
         private void buttonbefore_Click(object sender, EventArgs e)
         {
@@ -153,20 +154,25 @@ namespace CompanyDirectory
         }
         public DataGridView Display(DataSet ds)
         {
-            dgvIppan.DataSource = ds;
-            dgvIppan.DataMember = ds.Tables[0].TableName;
-            int[] ippan_list_width = new int[] { 30, 78, 81, 81, 81, 43, 79, 200 }; //size720, 235
-            for (int i = 0; ippan_list_width.Length > i; i++)
-            {
-                dgvIppan.Columns[i].Width = ippan_list_width[i];
-            }
-            this.dgvIppan.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
-            //          表示データヘッダー部分の編集（不要かもしれません）
-            string[] ippanlist = new string[] { "ID", "氏名", "かな氏名", "部署名", "役職名", "性別", "入社年月日", "メール" };
-            for (int i = 0; ippanlist.Length > i; i++)
-            {
-                dgvIppan.Columns[i].HeaderText = ippanlist[i];
-            }
+            
+
+                dgvIppan.DataSource = ds;
+                dgvIppan.DataMember = ds.Tables[0].TableName;
+                int[] ippan_list_width = new int[] { 31, 76, 81, 81, 81, 53, 110, 200 };
+                for (int i = 0; ippan_list_width.Length > i; i++)
+                {
+                    dgvIppan.Columns[i].Width = ippan_list_width[i];
+                }
+                this.dgvIppan.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.False;
+                //          表示データヘッダー部分の編集（不要かもしれません）
+                string[] ippanlist = new string[] { "ID", "氏名", "かな氏名", "部署名", "役職名", "性別", "入社年月日", "メール" };
+                for (int i = 0; ippanlist.Length > i; i++)
+                {
+                    dgvIppan.Columns[i].HeaderText = ippanlist[i];
+                }
+            
+            
+            
             return dgvIppan;
         }
         public int getSexList(ref List<string> sexlist)
@@ -266,32 +272,174 @@ namespace CompanyDirectory
         }
         private void txtid_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
+            sid = txtid.Text;
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
+
             s0 = txtName.Text;
+            System.Text.RegularExpressions.Regex rs =
+            new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
+            if (s0.Length > 8 || rs.IsMatch(s0) == true)
+            {
+                s0 = "";
+                txtName.Text = "";
+            }
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s0 == ""&&txtKana.Text==""&&txtMail.Text==""&&cmbYaku.Text==""&&cmbBusho.Text==""&&cmbSex.Text=="")
+            {
+                if (SendDataE<=10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE>10&&j==0)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+                else if (SendDataE>10&&SendDataE - 10 * (j + 1) < 1&&j>0)
+                {
+                    buttonnext.Visible = false;
+                    buttonbefore.Visible = true;
+                }
+                else
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = true;
+                }
+            }
         }
 
         private void txtKana_TextChanged(object sender, EventArgs e)
         {
+            System.Text.RegularExpressions.Regex rs =
+           new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
             s1 = txtKana.Text;
+            if (s1.Length > 8 || rs.IsMatch(s1) == true)
+            {
+                s1 = "";
+                txtKana.Text = "";
+            }
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s1 == "" && txtName.Text == "" && txtMail.Text == "" && cmbYaku.Text == "" && cmbBusho.Text == "" && cmbSex.Text == "")
+            {
+                if (SendDataE <= 10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE > 10 && j == 0)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+                else if (SendDataE > 10 && SendDataE - 10 * (j + 1) < 1 && j > 0)
+                {
+                    buttonnext.Visible = false;
+                    buttonbefore.Visible = true;
+                }
+                else
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = true;
+                }
+            }
         }
 
         private void cmbBusho_SelectedIndexChanged(object sender, EventArgs e)
         {
             s2 = cmbBusho.Text;
+                        buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s2 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbYaku.Text == "" && cmbSex.Text == "")
+            {
+                if (SendDataE <= 10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE > 10 && j == 0)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+                else if (SendDataE > 10 && SendDataE - 10 * (j + 1) < 1 && j > 0)
+                {
+                    buttonnext.Visible = false;
+                    buttonbefore.Visible = true;
+                }
+                else
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = true;
+                }
+            }
         }
 
         private void cmbYaku_SelectedIndexChanged(object sender, EventArgs e)
         {
             s3 = cmbYaku.Text;
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s3 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == ""&&cmbBusho.Text==""&&cmbSex.Text=="")
+            {
+                if (SendDataE <= 10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE > 10 && j == 0)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+                else if (SendDataE > 10 && SendDataE - 10 * (j + 1) < 1 && j > 0)
+                {
+                    buttonnext.Visible = false;
+                    buttonbefore.Visible = true;
+                }
+                else
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = true;
+                }
+            }
         }
 
         private void cmbSex_SelectedIndexChanged(object sender, EventArgs e)
         {
             s4 = cmbSex.Text;
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s4 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbBusho.Text == ""&&cmbYaku.Text=="")
+            {
+                if (SendDataE <= 10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE > 10 && j == 0)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+                else if (SendDataE > 10 && SendDataE - 10 * (j + 1) < 1 && j > 0)
+                {
+                    buttonnext.Visible = false;
+                    buttonbefore.Visible = true;
+                }
+                else
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = true;
+                }
+            }
         }
 
         private void txtEnterday_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -306,13 +454,46 @@ namespace CompanyDirectory
 
         private void txtMail_TextChanged(object sender, EventArgs e)
         {
+            System.Text.RegularExpressions.Regex rs =
+            new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
             s7 = txtMail.Text;
+            if (s7.Length > 20 || rs.IsMatch(s7) == true)
+            {
+                s7 = "";
+                txtMail.Text = "";
+            }
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s1 == "" && txtName.Text == "" && txtKana.Text == "" && cmbYaku.Text == ""&&cmbBusho.Text=="")
+            {
+                if (SendDataE <= 10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE > 10 && j == 0)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+                else if (SendDataE > 10 && SendDataE - 10 * (j + 1) < 1 && j > 0)
+                {
+                    buttonnext.Visible = false;
+                    buttonbefore.Visible = true;
+                }
+                else
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = true;
+                }
+            }
         }
 
         private void listForm_Load(object sender, EventArgs e)
         {
             buttonbefore.Visible = false;
             buttonnext.Visible = false;
+
         }
         public int? SendDataC
         {
@@ -338,6 +519,7 @@ namespace CompanyDirectory
 
             string sqlText;
             string s;
+            string snnid;
             // DataGrid dg = new DataGrid();
             sid = txtid.Text;
             if (txtid.Text == "")
@@ -358,6 +540,14 @@ namespace CompanyDirectory
                     s = "11111";
                 }
 
+            }
+            if (s == null)
+            {
+                snnid = "and id LIKE '%" + s + "%' ";
+            }
+            else
+            {
+                snnid =  "and id ='" + s + "' ";
             }
             this.SendDataC = k;
             i0 = k;
@@ -386,7 +576,7 @@ namespace CompanyDirectory
 
 
                     shortDateString = dt.Value.ToShortDateString();
-                    MessageBox.Show(shortDateString);
+                    //MessageBox.Show(shortDateString);
                     if (s6 == "同一")
                     {
                         snn = "and nyusya ='" + shortDateString + "' ";
@@ -397,7 +587,7 @@ namespace CompanyDirectory
                     }
                     else if (s6 == "後")
                     {
-                        snn = "and nyusya >'" + shortDateString + "' ";
+                        snn = "and nyusya >='" + shortDateString + "' ";
                     }
                     else
                     {
@@ -454,7 +644,7 @@ namespace CompanyDirectory
             sqlText += "LEFT OUTER JOIN tbl_sex ON tbl_meibo.sex_no = tbl_sex.sex_no ";
             sqlText += "WHERE flag_no = 0 ";
 
-            sqlText += "and id LIKE '%" + s + "%' ";
+            sqlText += snnid;
             sqlText += snn1;
             sqlText += snn2;
             sqlText += "and bushomei LIKE '%" + s2 + "%' ";
@@ -478,7 +668,7 @@ namespace CompanyDirectory
             sqlText2 += "LEFT OUTER JOIN tbl_sex ON tbl_meibo.sex_no = tbl_sex.sex_no ";
             sqlText2 += "WHERE flag_no = 0 ";
 
-            sqlText2 += "and id LIKE '%" + s + "%' ";
+            sqlText2 += snnid;
 
             sqlText2 += snn1;
             sqlText2 += snn2;
@@ -493,9 +683,10 @@ namespace CompanyDirectory
             sqlText2 += ") AS motodata";
             command.CommandText = sqlText2;
             command.Connection = conn;
-            object o = command.ExecuteScalar();
+
             try
-            {
+            {   
+                object o = command.ExecuteScalar();
                 count = int.Parse(o.ToString());
             }
             catch
@@ -508,10 +699,18 @@ namespace CompanyDirectory
             // datasetする
             DataSet ds = new DataSet();
             //dsにtbl_meiboのデータを流し込む
-            dataadapter.Fill(ds, "tbl_meibo");
+            try
+            {
+                dataadapter.Fill(ds, "tbl_meibo");
+            }
+            catch
+            {
+                ds = null;
+
+            }
             // closeする
             conn.Close();
-            MessageBox.Show(count.ToString());
+            //MessageBox.Show(count.ToString());
             i0 = 0;
             s0 = "";
             s1 = "";
@@ -525,6 +724,7 @@ namespace CompanyDirectory
 
             string sqlText;
             string s;
+            string snnid;
             // DataGrid dg = new DataGrid();
             sid = txtid.Text;
             if (txtid.Text == "")
@@ -544,6 +744,14 @@ namespace CompanyDirectory
                     k = 11111;
                     s = "11111";
                 }
+            }
+            if (s == null)
+            {
+                snnid = "and id LIKE '%" + s + "%' ";
+            }
+            else
+            {
+                snnid = "and id ='" + s + "' ";
             }
             this.SendDataC = k;
             i0 = k;
@@ -574,7 +782,7 @@ namespace CompanyDirectory
                 }
                 else if (s6 == "後")
                 {
-                    snn = "and nyusya >'" + shortDateString + "' ";
+                    snn = "and nyusya >='" + shortDateString + "' ";
                 }
                 else
                 {
@@ -625,7 +833,7 @@ namespace CompanyDirectory
             sqlText += "LEFT OUTER JOIN tbl_sex ON tbl_meibo.sex_no = tbl_sex.sex_no ";
             sqlText += "WHERE flag_no = 0 ";
 
-            sqlText += "and id LIKE '%" + s + "%' ";
+            sqlText += snnid;
 
             sqlText += snn1;
             sqlText += snn2;
@@ -678,26 +886,171 @@ namespace CompanyDirectory
 
         private void cmbSex_TextChanged(object sender, EventArgs e)
         {
-
+            s4 = cmbSex.Text;
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s4 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbYaku.Text == "" && cmbBusho.Text == "")
+            {
+                if (SendDataE <= 10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE > 10 && j == 0)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+                else if (SendDataE > 10 && SendDataE - 10 * (j + 1) < 1 && j > 0)
+                {
+                    buttonnext.Visible = false;
+                    buttonbefore.Visible = true;
+                }
+                else
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = true;
+                }
+            }
         }
 
         private void cmbYaku_TextUpdate(object sender, EventArgs e)
         {
+            System.Text.RegularExpressions.Regex rs =
+             new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
             s3 = cmbYaku.Text;
+            if (s3.Length > 20 || rs.IsMatch(s3) == true)
+            {
+                s3 = "";
+                cmbYaku.Text = "";
+            }
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s3 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbBusho.Text == "" && cmbSex.Text == "")
+            {
+                if (SendDataE <= 10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE > 10 && j == 0)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+                else if (SendDataE > 10 && SendDataE - 10 * (j + 1) < 1 && j > 0)
+                {
+                    buttonnext.Visible = false;
+                    buttonbefore.Visible = true;
+                }
+                else
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = true;
+                }
+            }
         }
 
         private void cmbBusho_TextUpdate(object sender, EventArgs e)
         {
+            System.Text.RegularExpressions.Regex rs =
+             new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
             s2 = cmbBusho.Text;
+            if (s2.Length > 20 || rs.IsMatch(s2) == true)
+            {
+                s2 = "";
+                cmbBusho.Text = "";
+            }
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s3 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbYaku.Text == "" && cmbSex.Text == "")
+            {
+                if (SendDataE <= 10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE > 10 && j == 0)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+                else if (SendDataE > 10 && SendDataE - 10 * (j + 1) < 1 && j > 0)
+                {
+                    buttonnext.Visible = false;
+                    buttonbefore.Visible = true;
+                }
+                else
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = true;
+                }
+            }
         }
         private void cmbEnter_TextUpdate(object sender, EventArgs e)
         {
+            System.Text.RegularExpressions.Regex rs =
+             new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
             s6 = cmbEnter.Text;
+            if (s6.Length > 20 || rs.IsMatch(s6) == true)
+            {
+                s6 = "";
+                cmbEnter.Text = "";
+            }
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s6 == "")
+            {
+                if (SendDataE <= 10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE > 10)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+            }
         }
 
         private void cmbSex_TextUpdate(object sender, EventArgs e)
         {
+            System.Text.RegularExpressions.Regex rs =
+            new System.Text.RegularExpressions.Regex(@"[\uFF9E-\uFF9F,\uFF61-\uFF65,\u0027]");
             s4 = cmbSex.Text;
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s4.Length > 10 || rs.IsMatch(s4) == true)
+            {
+                s4 = "";
+                cmbSex.Text = "";
+            }
+            buttonbefore.Visible = false;
+            buttonnext.Visible = false;
+            if (s4 == "" && txtName.Text == "" && txtKana.Text == "" && txtMail.Text == "" && cmbYaku.Text == "" && cmbBusho.Text == "")
+            {
+                if (SendDataE <= 10)
+                {
+                    buttonbefore.Visible = false;
+                    buttonnext.Visible = false;
+                }
+                else if (SendDataE > 10 && j == 0)
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = false;
+                }
+                else if (SendDataE > 10 && SendDataE - 10 * (j + 1) < 1 && j > 0)
+                {
+                    buttonnext.Visible = false;
+                    buttonbefore.Visible = true;
+                }
+                else
+                {
+                    buttonnext.Visible = true;
+                    buttonbefore.Visible = true;
+                }
+            }
         }
     }
 }

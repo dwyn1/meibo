@@ -21,13 +21,10 @@ namespace CompanyDirectory
             InitializeComponent();
         }
         int j = 0;
-//        private void txtid_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
- //       {
- //       }
-        private void txtid_TextChanged(object sender, EventArgs e)
-        {
-            s11 = txtid.Text;
-        }
+        //private void txtid_TextChanged(object sender, EventArgs e)
+        //{
+        //    s11 = txtid.Text;
+        //}
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -40,7 +37,7 @@ namespace CompanyDirectory
             ID id = new ID();
             CheckID checkid = new CheckID();
             chooseForm cf = new chooseForm();
-//            s11 = txtid.Text;//動作のため一時避難
+            s11 = txtid.Text;//動作のため一時避難
             if (id.show(s11) == 0 & pass.show(s2) == 0)    //片側の結果で弾くのではなく両側で判定してほしいので&は一つ
             {
                 try 
@@ -60,8 +57,11 @@ namespace CompanyDirectory
 
                     if (db1.show(i, s2) == 0 && i!= 4)
                     {
-                        cf.Show();     //後で消そう
+                        this.Visible = false;
+                        cf.Show();
+                        //後で消そう
                         checkid.show(i);
+
                     }
                     else if (db1.show(i, s2) == 0 && i == 4) //管理者IDを一時的に4とした。畑中さんと話し合う。
                     {
@@ -77,8 +77,14 @@ namespace CompanyDirectory
                 }
                 else if(db1.show(i, s2) == 0 && i!= 4)
                 {
-                    cf.Show();                           //後で消そう
+
+                    //cf.ShowDialog();
+                    this.Visible = false;
+                    cf.Show();
+                    Application.EnableVisualStyles();
+                    //後で消そう
                     checkid.show(i);
+                    
                 }
                 else if (db1.show(i, s2) == 0 && i == 4)
                 {
@@ -102,6 +108,17 @@ namespace CompanyDirectory
             takePVForm tpv = new takePVForm(i);
             //personalForm pf = new personalForm(i);
             cf.SendData = i;
+            
+        }
+
+        private void txtid_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void IdPwForm_Load(object sender, EventArgs e)
+        {
+
         }
 
     }
@@ -156,7 +173,15 @@ namespace CompanyDirectory
 
 
             cmd.Connection = conn;
-            int i = (int)cmd.ExecuteScalar();
+            int i;
+            try
+            {
+                i = (int)cmd.ExecuteScalar();
+            }
+            catch
+            {
+                i = 0;
+            }
             conn.Close();
 
             // ID・Pwが正しい場合

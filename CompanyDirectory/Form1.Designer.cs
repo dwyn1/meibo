@@ -115,6 +115,7 @@
             this.Controls.Add(this.label1);
             this.Name = "IdPwForm";
             this.Text = "IDパスワード入力";
+            this.Load += new System.EventHandler(this.IdPwForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

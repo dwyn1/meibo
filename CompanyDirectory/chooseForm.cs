@@ -15,7 +15,7 @@ namespace CompanyDirectory
        
         postlistForm plf = new postlistForm();
         CheckID ci = new CheckID();
-        IdPwForm idp = new IdPwForm();
+        
         int x;
         public chooseForm()
         {
@@ -40,8 +40,10 @@ namespace CompanyDirectory
             }
             else if (SendData >= 101 && SendData<= 300)
             {
+                
                 listForm lf = new listForm();
-                lf.Show();
+                lf.ShowDialog(this);
+                
             }
             else if (SendData == 3)
             {
@@ -59,6 +61,11 @@ namespace CompanyDirectory
             {
                 return x;
             }
+        }
+
+        private void chooseForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
